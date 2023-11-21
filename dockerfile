@@ -10,7 +10,7 @@ ARG BACKEND_REPO_URL=https://github.com/Giagio546/app-palestra-be
 RUN git clone ${BACKEND_REPO_URL} .
 COPY package*.json ./
 RUN npm install -g npm@latest
-COPY .env ./
+COPY .env .
 RUN npm install --no-cache
 EXPOSE 5001
 CMD ["npm", "run", "dev"]
