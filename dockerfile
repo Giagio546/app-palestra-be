@@ -1,6 +1,5 @@
 FROM node:18-alpine
 WORKDIR /app
-COPY .env ./
 ENV PORT=5001
 ENV CONNECTION_STRING=mongodb://127.0.0.1:27017/app-palestra
 ENV ACCESS_TOKEN_SECRET=chiavesegreta123
@@ -11,6 +10,7 @@ ARG BACKEND_REPO_URL=https://github.com/Giagio546/app-palestra-be
 RUN git clone ${BACKEND_REPO_URL} .
 COPY package*.json ./
 RUN npm install -g npm@latest
+COPY .env ./
 RUN npm install --no-cache
 EXPOSE 5001
 CMD ["npm", "run", "dev"]
