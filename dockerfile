@@ -1,6 +1,6 @@
 FROM node:18-alpine
 WORKDIR /app
-COPY .env .
+COPY .env ./
 ENV PORT=5001
 ENV CONNECTION_STRING=mongodb://127.0.0.1:27017/app-palestra
 ENV ACCESS_TOKEN_SECRET=chiavesegreta123
